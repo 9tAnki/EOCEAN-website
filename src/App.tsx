@@ -242,60 +242,60 @@ const HeroSlider = () => {
         </motion.div>
       </AnimatePresence>
 
-      {/* Content Container - Added padding-top to ensure no collision with navbar */}
-      <div className="relative z-20 max-w-4xl mx-auto px-6 pt-20 flex flex-col items-center">
+      {/* Content Container - Added padding-top to ensure no collision with navbar and centered contents */}
+      <div className="relative z-20 max-w-4xl mx-auto px-6 pt-12 md:pt-16 flex flex-col items-center justify-center min-h-screen">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="glass-dark p-8 md:p-12 rounded-[40px] text-center max-w-2xl relative"
+          className="glass-dark p-5 md:p-12 rounded-[32px] md:rounded-[40px] text-center max-w-2xl relative w-full"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/20 border border-blue-500/30 text-blue-200 text-xs font-semibold uppercase tracking-[0.2em] mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-500/30 text-blue-200 text-[10px] font-semibold uppercase tracking-[0.2em] mb-4 md:mb-6"
           >
             <Zap className="w-3 h-3 fill-current" />
             Empowering Future Life
           </motion.div>
 
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-[1.1] tracking-tight">
-            用科技赋能<br />未来生活
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-[1.2] tracking-tight">
+            用科技赋能<br className="sm:hidden" />未来生活
           </h1>
           
-          <p className="text-gray-200 text-base md:text-lg font-light mb-8 max-w-xl mx-auto">
-            Empowering future life with technology
+          <p className="text-white/80 text-sm md:text-lg font-light mb-6 md:mb-8 max-w-xl mx-auto leading-relaxed">
+            Empowering future life<br className="sm:hidden" /> with technology
           </p>
 
-          <div className="h-px w-20 bg-white/20 mx-auto mb-8" />
+          <div className="h-px w-16 md:w-20 bg-white/20 mx-auto mb-6 md:mb-8" />
 
           <motion.div
             animate={{ 
               opacity: [0.7, 1, 0.7],
-              scale: [0.98, 1, 0.98]
+              scale: [0.99, 1, 0.99]
             }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6"
+            className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl md:rounded-2xl p-3 md:p-6"
           >
-            <h2 className="text-lg md:text-xl font-semibold text-blue-300 mb-1">
-              网站正在建设中 欢迎与我们联系！
+            <h2 className="text-sm md:text-xl font-semibold text-blue-300 mb-1 leading-relaxed">
+              网站正在建设中<br className="sm:hidden" /> 欢迎联系
             </h2>
-            <p className="text-white/60 text-xs md:text-sm">
-              Website under construction, welcome to contact us!
+            <p className="text-white/50 text-[10px] md:text-sm">
+              Website under construction
             </p>
           </motion.div>
 
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="mt-8 md:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4">
             <a 
               href="mailto:anson@eocean.email"
-              className="w-full sm:w-auto px-10 py-3.5 bg-white text-gray-900 font-semibold rounded-full hover:bg-blue-50 transition-colors flex items-center justify-center gap-2 group shadow-xl"
+              className="w-full sm:w-auto px-8 py-3 bg-white text-gray-900 font-bold rounded-full hover:bg-blue-50 transition-colors flex items-center justify-center gap-2 group shadow-xl text-sm"
             >
-              立即联系 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              立刻联系 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
             <a 
               href="#products"
-              className="w-full sm:w-auto px-10 py-3.5 bg-white/10 text-white font-medium rounded-full border border-white/20 hover:bg-white/20 transition-all flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 py-3 bg-white/10 text-white font-medium rounded-full border border-white/20 hover:bg-white/20 transition-all flex items-center justify-center gap-2 text-sm"
             >
               了解更多
             </a>
@@ -324,11 +324,12 @@ const HeroSlider = () => {
 
       {/* Mobile Scroll Indicator */}
       <motion.div 
-        animate={{ y: [0, 5, 0] }}
+        animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 lg:hidden"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 lg:hidden flex flex-col items-center gap-1"
       >
-        <ChevronDown className="w-6 h-6 text-white/60" />
+        <span className="text-white/40 text-[9px] uppercase font-bold tracking-[0.2em]">Scroll</span>
+        <ChevronDown className="w-5 h-5 text-white/60" />
       </motion.div>
     </section>
   );
@@ -357,9 +358,9 @@ const ContactWidget = () => {
             initial={{ opacity: 0, y: 20, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
-            className="fixed bottom-32 right-10 z-[60] w-[360px] lg:w-[400px]"
+            className="fixed bottom-24 md:bottom-32 left-4 right-4 md:left-auto md:right-10 z-[60] md:w-[400px]"
           >
-            <div className="glass p-8 rounded-[32px] shadow-2xl border border-white/40">
+            <div className="glass p-6 md:p-8 rounded-[24px] md:rounded-[32px] shadow-2xl border border-white/40 max-h-[80vh] overflow-y-auto">
               <div className="flex items-center gap-4 mb-8">
                 <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center">
                   <Send className="w-6 h-6" />
@@ -468,9 +469,9 @@ export default function App() {
         <HeroSlider />
 
         {/* Features / Preview Section */}
-        <section className="py-32 bg-white">
+        <section id="products" className="py-20 md:py-32 bg-white">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center max-w-3xl mx-auto mb-20">
+            <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
               <motion.span 
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -520,32 +521,33 @@ export default function App() {
         </section>
 
         {/* Contact Strip */}
-        <section id="contact" className="py-24 bg-gray-50 border-y border-gray-200">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="glass p-12 lg:p-20 rounded-[48px] bg-gradient-to-br from-blue-600 to-blue-800 text-white relative overflow-hidden">
+        <section id="contact" className="py-16 md:py-24 bg-gray-50 border-y border-gray-200">
+          <div className="max-w-7xl mx-auto px-4 md:px-6">
+            <div className="glass p-6 md:p-12 lg:p-20 rounded-[32px] md:rounded-[48px] bg-gradient-to-br from-blue-600 to-blue-800 text-white relative overflow-hidden">
               <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -mr-20 -mt-20 blur-3xl" />
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-400/10 rounded-full -ml-32 -mb-32 blur-2xl" />
               
-              <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                <div>
-                  <h2 className="text-3xl md:text-5xl font-bold mb-6 italic leading-tight">
+              <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+                <div className="w-full">
+                  <h2 className="text-2xl md:text-5xl font-bold mb-4 md:mb-6 italic leading-tight">
                     期待与您的合作<br />共创未来
                   </h2>
-                  <p className="text-blue-100 text-lg opacity-80 mb-10 max-w-md">
+                  <p className="text-blue-100/70 text-sm md:text-base mb-8 max-w-md">
                     我们的团队已准备好为您提供专业的技术支持和创新的行业解决方案。
                   </p>
                   
-                  <div className="glass-dark bg-white/5 border-white/10 p-8 rounded-3xl mb-8">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <MapPin className="w-6 h-6" />
+                  {/* Address Card - Condensed and stretched */}
+                  <div className="glass-dark bg-white/5 border-white/10 p-4 md:p-5 rounded-2xl w-full mb-4">
+                    <div className="flex items-start gap-3 md:gap-4">
+                      <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                        <MapPin className="w-4 h-4 text-blue-200" />
                       </div>
-                      <div>
-                        <h4 className="text-sm font-bold uppercase tracking-widest text-blue-200 mb-2">公司地址 Address</h4>
-                        <p className="text-white text-lg font-medium leading-relaxed mb-1">
+                      <div className="min-w-0 flex-1">
+                        <h4 className="text-[10px] font-bold uppercase tracking-widest text-blue-300 mb-1">公司地址 Address</h4>
+                        <p className="text-white text-sm md:text-base font-medium leading-snug mb-1">
                           {CONTACT_INFO.address}
                         </p>
-                        <p className="text-blue-100/60 text-sm italic">
+                        <p className="text-blue-100/50 text-[10px] md:text-xs leading-relaxed italic">
                           {CONTACT_INFO.addressEn}
                         </p>
                       </div>
@@ -553,34 +555,34 @@ export default function App() {
                   </div>
                 </div>
                 
-                <div className="grid grid-cols-1 gap-4">
-                  <div className="glass-dark bg-white/10 border-white/20 p-6 rounded-2xl flex items-center gap-5 hover:bg-white/15 transition-colors group">
-                    <div className="w-12 h-12 bg-white/10 text-white rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <User className="w-6 h-6" />
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3 w-full">
+                  <div className="glass-dark bg-white/10 border-white/20 p-3 md:p-4 rounded-xl flex items-center gap-3 md:gap-4 hover:bg-white/15 transition-colors group">
+                    <div className="w-8 h-8 bg-white/10 text-white rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                      <User className="w-4 h-4" />
                     </div>
-                    <div>
-                      <p className="text-xs text-blue-200 font-bold uppercase tracking-wider mb-0.5">Contact Person</p>
-                      <p className="text-white text-lg font-semibold">{CONTACT_INFO.name}</p>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-[8px] md:text-[9px] text-blue-200 font-bold uppercase tracking-wider mb-0.5">联系人 Contact Person</p>
+                      <p className="text-white text-xs md:text-base font-semibold leading-tight">{CONTACT_INFO.name}</p>
                     </div>
                   </div>
                   
-                  <a href={`tel:${CONTACT_INFO.phone}`} className="glass-dark bg-white/10 border-white/20 p-6 rounded-2xl flex items-center gap-5 hover:bg-white/15 transition-colors group">
-                    <div className="w-12 h-12 bg-white/10 text-white rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Phone className="w-6 h-6" />
+                  <a href={`tel:${CONTACT_INFO.phone}`} className="glass-dark bg-white/10 border-white/20 p-3 md:p-4 rounded-xl flex items-center gap-3 md:gap-4 hover:bg-white/15 transition-colors group min-w-0">
+                    <div className="w-8 h-8 bg-white/10 text-white rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                      <Phone className="w-4 h-4" />
                     </div>
-                    <div>
-                      <p className="text-xs text-blue-200 font-bold uppercase tracking-wider mb-0.5">Phone Number</p>
-                      <p className="text-white text-lg font-semibold tracking-wide">{CONTACT_INFO.phone}</p>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-[8px] md:text-[9px] text-blue-200 font-bold uppercase tracking-wider mb-0.5">联系电话 Phone Number</p>
+                      <p className="text-white text-xs md:text-base font-semibold tracking-wide leading-tight">{CONTACT_INFO.phone}</p>
                     </div>
                   </a>
 
-                  <a href={`mailto:${CONTACT_INFO.email}`} className="glass-dark bg-white/10 border-white/20 p-6 rounded-2xl flex items-center gap-5 hover:bg-white/15 transition-colors group">
-                    <div className="w-12 h-12 bg-white/10 text-white rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Mail className="w-6 h-6" />
+                  <a href={`mailto:${CONTACT_INFO.email}`} className="glass-dark bg-white/10 border-white/20 p-3 md:p-4 rounded-xl flex items-center gap-3 md:gap-4 hover:bg-white/15 transition-colors group sm:col-span-2 lg:col-span-1 min-w-0">
+                    <div className="w-8 h-8 bg-white/10 text-white rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                      <Mail className="w-4 h-4" />
                     </div>
-                    <div>
-                      <p className="text-xs text-blue-200 font-bold uppercase tracking-wider mb-0.5">Email Address</p>
-                      <p className="text-white text-lg font-semibold">{CONTACT_INFO.email}</p>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-[8px] md:text-[9px] text-blue-200 font-bold uppercase tracking-wider mb-0.5">电子邮箱 Email Address</p>
+                      <p className="text-white text-xs md:text-base font-semibold leading-tight">{CONTACT_INFO.email}</p>
                     </div>
                   </a>
                 </div>
